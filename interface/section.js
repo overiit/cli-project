@@ -11,6 +11,7 @@ class Section {
 
     start = async (initStart) => {
         let cmd = await cli.ask("Which action would you like to run?", [...Object.keys(this.commands), "exit"]);
+        cmd = cmd.toLowerCase();
         if (cmd == "exit") {
             if (initStart) return initStart();
             else throw new Error("Init Start couldnt be passed to section.")
@@ -33,8 +34,10 @@ class Section {
     log = (...args) => console.log(`[${this.name}]`, ...args);
     
     addCommand = (action) => {
-        if (this.commands[action.name]) throw new Error(`${this.name} already has ${action.name} as command registered.`);
-        this.commands[action.name] = action;
+        if (!action.name) throw new Error("Command has no name provided");
+        let name = action.name.toLowerCase();
+        if (this.commands[name]) throw new Error(`Section "${this.name}" already has "${name}" as a command registered.`);
+        this.commands[name] = action;
     };
 }
 

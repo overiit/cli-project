@@ -1,9 +1,9 @@
-const activeSections = require("./activeSections");
+const ActiveSections = require("./container/ActiveSections");
 
 const cli = require("./helper/cli");
 
 let sections = {};
-for (let section of activeSections) {
+for (let section of ActiveSections) {
   if (!section.name)
     throw new Error("Section doesn't have a valid name initialized.");
   if (!section.start)

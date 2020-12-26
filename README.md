@@ -3,7 +3,7 @@
 The way the CLI works is you first selection which category/section you would like to enter and then which action you would like to run.
 
 ## Setup
-
+1. Install dependencies: `npm install`
 1. Create sections & commands at your will
 
 ### Sections:

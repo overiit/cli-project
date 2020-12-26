@@ -10,7 +10,7 @@ for (let section of ActiveSections) {
     throw new Error(
       `Section "${section.name}" doesn't have a valid start function.`
     );
-  sections[section.name] = section;
+  sections[section.name.toLowerCase()] = section;
 }
 
 const start = async () => {
@@ -18,7 +18,7 @@ const start = async () => {
     "Which category would you like to access?",
     Object.keys(sections)
   );
-  sections[section].start(start);
+  sections[section.toLowerCase()].start(start);
 };
 
 module.exports = {

@@ -1,6 +1,6 @@
 # CLI Project
 
-The way the CLI works is you first selection which category/section you would like to enter and then which action you would like to run.
+The way the CLI-Project works is you first select which category/section you would like to access and then which action you would like to run within that category. Any JS code can be executed with an npm library.
 
 ## Setup
 1. Install dependencies: `npm install`
